@@ -11,7 +11,7 @@ if (document.readyState !== "loading") {
 
 function initialize() {
   const addCommentButton = document.getElementById("add-comment");
-  const RemoveCommentsButton = document.getElementById("remove-comments");
+  const removeCommentsButton = document.getElementById("remove-comments");
   const commentList = document.getElementById("comment-list");
 
   addCommentButton.addEventListener("click", function () {
@@ -21,10 +21,13 @@ function initialize() {
     if (commentText.value !== "") {
       newListItem.innerHTML = commentText.value;
       commentList.appendChild(newListItem);
+    } else {
+      newListItem.innerHTML = "Amazing food very good";
+      commentList.appendChild(newListItem);
     }
   });
 
-  RemoveCommentsButton.addEventListener("click", function () {
+  removeCommentsButton.addEventListener("click", function () {
     let confirmation = confirm("Are you sure ?");
     if (confirmation === true) {
       while (commentList.hasChildNodes())
